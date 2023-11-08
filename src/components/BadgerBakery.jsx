@@ -11,7 +11,7 @@ export default function BadgerBakery() {
     const [cart, setCart] = useState({});
     const [goodIds, setGoodIds] = useState([]);
     let totalCost = 0;
-    const isBasketEmpty = Object.keys(cart).length === 0;
+    let isBasketEmpty = true;
     
 
     
@@ -83,6 +83,12 @@ export default function BadgerBakery() {
     
                 if (item) {
                     totalCost += item.price * quantity;
+                }
+                if(totalCost === 0){
+                    isBasketEmpty = true;
+                }
+                else{
+                    isBasketEmpty = false;
                 }
             }
         }
