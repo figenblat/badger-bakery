@@ -105,7 +105,7 @@ export default function BadgerBakery() {
 
         Alert.alert(
             "Order Confirmed!",
-            `Your order contains ${numItems} items and costs $${totalCost.toFixed(2)}!`,
+            `Your order contains ${numItems} items and costs a total of $${totalCost.toFixed(2)}!`,
             [
                 { text: "OK", onPress: () => clearBasketAndReturn() }
             ]
@@ -113,13 +113,9 @@ export default function BadgerBakery() {
     };
 
     const clearBasketAndReturn = () => {
-        setCart({}); // Clear the basket
-        setCurrentPage(1); // Return to the first item
+        setCart({}); 
+        setCurrentPage(1); 
     };
-
-            
-        
-          
 
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -136,7 +132,7 @@ export default function BadgerBakery() {
                     image={good.imgSrc}
                     price={good.price}
                     upperLimit={good.upperLimit}
-                    quantityInCart={cart[currentGoodId] || 0} // Pass the quantity in cart as a prop
+                    quantityInCart={cart[currentGoodId] || 0}
                     onAddToCart={() => handleAddToCart(currentGoodId)}
                     onRemoveFromCart={() => handleRemoveFromCart(currentGoodId)}
         />
