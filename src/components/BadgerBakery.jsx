@@ -13,10 +13,6 @@ export default function BadgerBakery() {
     let totalCost = 0;
     let isBasketEmpty = true;
     
-
-    
-
-
     useEffect(()=>{
         fetch("https://cs571.org/api/f23/hw7/goods", {
             headers:{
@@ -31,8 +27,6 @@ export default function BadgerBakery() {
             setGoodIds(goodIds);
             });
         }, []);
-        
-
 
         const handleNextClick = () => {
             if (currentPage < Math.ceil(goods.length / itemsPerPage)) {
@@ -55,8 +49,6 @@ export default function BadgerBakery() {
          
           const currentGoodId = goodIds[currentPage - 1];
           
-
-
           const handleAddToCart = (currentGoodId) => {
             setCart(prevCart => ({
               ...prevCart,
